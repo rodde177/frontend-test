@@ -1,28 +1,22 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const SearchBar = () => {
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const [value, setValue] = useState('');
 
-        console.log(value);
-    };
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(value);
+  };
 
-    const handleChange = (e) => {
-        e.preventDefault();
+  const handleChange = e => {
+    e.preventDefault();
+    setValue(e.target.value);
+  };
 
-        setValue(e.target.value);
-        //console.log(value);
-    };
-
-    const [value, setValue] = useState('');
-    
-    return (
-        <form onSubmit={handleSubmit}>
-            <input 
-            type="text"
-            value={value}
-            onChange={handleChange}></input>
-        </form>
-    );
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={value} onChange={handleChange} />
+    </form>
+  );
+};
 export default SearchBar;
