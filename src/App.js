@@ -1,11 +1,9 @@
 import React from 'react';
+import api from './api';
 
 const App = () => {
-  return (
-    <div>
-      <h1>Hello </h1>
-    </div>
-  );
+  api();
+  return <div>hej</div>;
 };
 
 export default App;
